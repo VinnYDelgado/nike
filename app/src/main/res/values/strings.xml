@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Nike Shoes</string>
+
+    <string name="title_page_one">AIR STRUCTURE</string>
+    <string name="title_page_two">AIR SOLSTICE QS</string>
+    <string name="title_page_three">AIR HUARACHE UTILITY</string>
+
+    <string name="description_page_one">From the Flymesh upper to the triple-density foam midsole, the Nike Air Zoom Structure 19 Men\'s Running Shoe offers plenty of support and the response you need for a smooth, stable ride that feels ultra fast.</string>
+    <string name="description_page_two">The Nike Air Solstice draws inspiration from the swoosh\'s classic running shoes of the 1980\'s updating the style with premium materials and impressive production quality.</string>
+    <string name="description_page_three">The Nike Air Huarache Utility Men\'s Shoe toughens up a famous running shoe with a nylon upper, fused mudguard and vibrant detail.</string>
+
+    <string name="price_page_one">140</string>
+    <string name="price_page_two">120</string>
+    <string name="price_page_three">300</string>
+    <string name="button_wish_list">WISH LIST</string>
+
+    <string name="price_default_product">$ %1$s</string>
+
+
+</resources>

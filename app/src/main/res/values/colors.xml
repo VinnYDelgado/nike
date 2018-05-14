@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default Colors Android -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!-- Default Colors App -->
+    <color name="strawberry">#F72E47</color>
+    <color name="strawberry_two">#F72648</color>
+    <color name="white">#FFFFFF</color>
+    <color name="yellow_green">#dffc3c</color>
+    <color name="yellow_orange">#ffba00</color>
+    <color name="bright_sky_blue">#26c9f7</color>
+    <color name="lightish_blue">#4054ff</color>
+    <color name="lighter_purple">#8850ff</color>
+    <color name="butterscotch">#FCCB3C</color>
+
+    <!-- Custom Screens -->
+    <color name="splash_background_color">@color/strawberry</color>
+    <color name="sunflower_yellow">#ffd300</color>
+    <color name="dodger_blue">#3ca3fc</color>
+
+
+</resources>
