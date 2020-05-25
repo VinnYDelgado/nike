@@ -1,3 +1,11 @@
 <resources>
+    <!-- Common dimensions -->
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_xlarge">64dp</dimen>
+
+
+    <dimen name="corner_radius">10dp</dimen>
 </resources>
 

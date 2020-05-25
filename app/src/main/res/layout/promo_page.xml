@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/promo_page_content"
@@ -7,16 +7,16 @@
     android:layout_height="match_parent"
     tools:background="@color/lighter_purple">
 
-    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_small"
         android:background="@color/strawberry"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="@dimen/corner_radius"
         app:cardElevation="@dimen/cardview_default_elevation"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
@@ -26,14 +26,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <android.support.constraint.Guideline
+            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline_header"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.65" />
 
@@ -57,12 +57,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/guideline_header" />
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/header_imageview"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:scaleType="fitEnd"
                 android:src="@drawable/nike_19"
                 app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
@@ -71,21 +71,35 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/header_details" />
 
-            <android.support.v7.widget.AppCompatButton
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/appCompatButton"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginStart="32dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+<!--                android:layout_marginBottom="32dp"-->
+<!--                android:background="@drawable/button_page_two"-->
+<!--                android:text="@string/button_wish_list"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/appCompatButton"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:layout_marginBottom="32dp"
-                android:layout_marginEnd="32dp"
                 android:layout_marginStart="32dp"
-                android:background="@drawable/button_page_two"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
                 android:text="@string/button_wish_list"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/header_details"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content"
@@ -93,7 +107,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/header_nike_logo"
                     android:layout_width="30dp"
                     android:layout_height="13dp"
@@ -103,12 +117,12 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/nike_logo" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
                     android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/header_nike_logo"
@@ -118,12 +132,12 @@
                     app:layout_constraintTop_toTopOf="@+id/header_nike_logo"
                     tools:text="$140" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewHeaderTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
                     android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
                     android:gravity="start|center_vertical"
                     android:textColor="@color/white"
                     android:textSize="14sp"
@@ -133,13 +147,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/header_nike_logo"
                     tools:text="AIR HUARACHE UTILITY" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewHeaderDescription"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
                     android:gravity="start|center_vertical"
                     android:textColor="@color/white"
                     android:textSize="12sp"
@@ -150,12 +164,12 @@
                     app:layout_constraintTop_toBottomOf="@+id/textViewHeaderTitle"
                     tools:text="The Nike Air Huarache Utility Men&apos;s Shoe toughens up a famous running shoe with a nylon upper, fused mudguard and vibrant detail." />
 
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
     <RelativeLayout
@@ -170,4 +184,4 @@
     </RelativeLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,53 +2,40 @@ package br.com.vdelgado.nikepromo
 
 import android.graphics.Typeface
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.v4.app.Fragment
-import android.support.v7.widget.AppCompatImageView
-import android.support.v7.widget.AppCompatTextView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 
 
 class IntroFragment : Fragment() {
 
-    private var mBackgroundColor:Int = 0
-    private var mPage:Int = 0
-
-    companion object {
-        private val BACKGROUND_COLOR = "background_color"
-        private val PAGE = "page"
-
-        fun newInstance(backgroundColor: Int, page: Int): IntroFragment {
-            val args = Bundle()
-            args.putInt(BACKGROUND_COLOR, backgroundColor)
-            args.putInt(PAGE, page)
-            val fragment = IntroFragment()
-            fragment.arguments = args
-            return fragment
-        }
-    }
+    private var mBackgroundColor: Int = 0
+    private var mPage: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if(arguments?.containsKey(BACKGROUND_COLOR) == false){
+        if (arguments?.containsKey(BACKGROUND_COLOR) == false) {
             throw RuntimeException("Fragment must contain a \"$BACKGROUND_COLOR\" argument!")
         }
         mBackgroundColor = arguments?.get(BACKGROUND_COLOR) as Int
-        if(arguments?.containsKey(PAGE) == false){
+        if (arguments?.containsKey(PAGE) == false) {
             throw RuntimeException("Fragment must contain a \"$BACKGROUND_COLOR\" argument!")
         }
         mPage = arguments?.get(PAGE) as Int
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var layoutResID:Int = when(mPage){
-            0-> R.layout.promo_page
-            1-> R.layout.promo_page
-            2-> R.layout.promo_page
-            else-> R.layout.promo_page
+        var layoutResID: Int = when (mPage) {
+            0 -> R.layout.promo_page
+            1 -> R.layout.promo_page
+            2 -> R.layout.promo_page
+            else -> R.layout.promo_page
         }
         val view = activity!!.layoutInflater.inflate(layoutResID, container, false)
         view.tag = mPage
@@ -62,20 +49,23 @@ class IntroFragment : Fragment() {
         contentBackground.setBackgroundColor(mBackgroundColor)
 
         val headerBackground = view.findViewById<View>(R.id.header)
-        val backgroundGradient = when(mPage){
-            0-> R.drawable.gradient_promo_page_one
-            1-> R.drawable.gradient_promo_page_two
-            else->R.drawable.gradient_promo_page_three
+        val backgroundGradient = when (mPage) {
+            0 -> R.drawable.gradient_promo_page_one
+            1 -> R.drawable.gradient_promo_page_two
+            else -> R.drawable.gradient_promo_page_three
         }
         headerBackground.setBackgroundResource(backgroundGradient)
 
         val buttonBackground = view.findViewById<Button>(R.id.appCompatButton)
-        val backgroundButton = when(mPage){
-            0-> R.drawable.button_page_one
-            1-> R.drawable.button_page_two
-            else->R.drawable.button_page_three
+
+        val backgroundButton = when (mPage) {
+            0 -> R.color.lighter_purple
+            1 -> R.color.yellow_orange
+            else -> R.color.lightish_blue
         }
-        buttonBackground.setBackgroundResource(backgroundButton)
+        context?.let {
+            buttonBackground.backgroundTintList = (ContextCompat.getColorStateList(it, backgroundButton))
+        }
 
         val typefaceRegular = Typeface.createFromAsset(context?.assets, "fonts/SanFranciscoDisplay-Regular.otf")
         val typefaceHeavy = Typeface.createFromAsset(context?.assets, "fonts/SanFranciscoDisplay-Heavy.otf")
@@ -90,34 +80,44 @@ class IntroFragment : Fragment() {
         buttonBackground.typeface = typefaceHeavy
 
 
-        headerTitle.text = getString(when(mPage){
-            0->R.string.title_page_one
-            1->R.string.title_page_two
-            else->R.string.title_page_three
+        headerTitle.text = getString(when (mPage) {
+            0 -> R.string.title_page_one
+            1 -> R.string.title_page_two
+            else -> R.string.title_page_three
         })
 
-        headerDescription.text = getString(when(mPage){
-            0->R.string.description_page_one
-            1->R.string.description_page_two
-            else->R.string.description_page_three
+        headerDescription.text = getString(when (mPage) {
+            0 -> R.string.description_page_one
+            1 -> R.string.description_page_two
+            else -> R.string.description_page_three
         })
 
-        textViewPrice.text = String.format(resources.getString(R.string.price_default_product),getString(when(mPage){
-            0->R.string.price_page_one
-            1->R.string.price_page_two
-            else->R.string.price_page_three
+        textViewPrice.text = String.format(resources.getString(R.string.price_default_product), getString(when (mPage) {
+            0 -> R.string.price_page_one
+            1 -> R.string.price_page_two
+            else -> R.string.price_page_three
         }))
 
         val imageViewShoes = view.findViewById<AppCompatImageView>(R.id.header_imageview)
-        imageViewShoes.setImageResource(when(mPage){
-            0->R.drawable.nike_19
-            1->R.drawable.nike_air_solstice
-            else->R.drawable.nike_safari
+        imageViewShoes.setImageResource(when (mPage) {
+            0 -> R.drawable.nike_19
+            1 -> R.drawable.nike_air_solstice
+            else -> R.drawable.nike_safari
         })
-
-
-
     }
 
+    companion object {
+        private const val BACKGROUND_COLOR = "background_color"
+        private const val PAGE = "page"
+
+        fun newInstance(backgroundColor: Int, page: Int): IntroFragment {
+            val args = Bundle()
+            args.putInt(BACKGROUND_COLOR, backgroundColor)
+            args.putInt(PAGE, page)
+            val fragment = IntroFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
 
 }
