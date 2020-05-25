@@ -17,7 +17,7 @@
         android:layout_marginBottom="@dimen/margin_small"
         android:background="@color/strawberry"
         app:cardCornerRadius="@dimen/corner_radius"
-        app:cardElevation="@dimen/cardview_default_elevation"
+        app:cardElevation="2dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toTopOf="@id/page_indicator"
@@ -72,18 +72,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/header_details" />
 
             <!--            <androidx.appcompat.widget.AppCompatButton-->
-<!--                android:id="@+id/appCompatButton"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="48dp"-->
-<!--                android:layout_marginStart="32dp"-->
-<!--                android:layout_marginEnd="32dp"-->
-<!--                android:layout_marginBottom="32dp"-->
-<!--                android:background="@drawable/button_page_two"-->
-<!--                android:text="@string/button_wish_list"-->
-<!--                android:textColor="@color/white"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent" />-->
+            <!--                android:id="@+id/appCompatButton"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="48dp"-->
+            <!--                android:layout_marginStart="32dp"-->
+            <!--                android:layout_marginEnd="32dp"-->
+            <!--                android:layout_marginBottom="32dp"-->
+            <!--                android:background="@drawable/button_page_two"-->
+            <!--                android:text="@string/button_wish_list"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent" />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/appCompatButton"
@@ -109,27 +109,27 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/header_nike_logo"
-                    android:layout_width="30dp"
-                    android:layout_height="13dp"
+                    android:layout_width="40dp"
+                    android:layout_height="0dp"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="32dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewPrice"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewPrice"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/nike_logo" />
+                    android:tint="@color/white"
+                    app:layout_constraintTop_toTopOf="@+id/textViewPrice"
+                    app:srcCompat="@drawable/ic_nike" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:textColor="@color/white"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/header_nike_logo"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewHeaderTitle"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/header_nike_logo"
-                    app:layout_constraintTop_toTopOf="@+id/header_nike_logo"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:text="$140" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -152,7 +152,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:gravity="start|center_vertical"
                     android:textColor="@color/white"
