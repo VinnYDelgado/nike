@@ -5,7 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 
-class IntroActivity: AppCompatActivity(){
+class IntroActivity : AppCompatActivity() {
 
     private lateinit var mViewPager: ViewPager
 
@@ -17,6 +17,6 @@ class IntroActivity: AppCompatActivity(){
         // Set an Adapter on the ViewPager
         mViewPager.adapter = IntroAdapter(supportFragmentManager)
 
-        mViewPager.setPageTransformer(false,ParallaxPageTransformer())
+        mViewPager.setPageTransformer(false, ParallaxPageTransformer())
     }
 }

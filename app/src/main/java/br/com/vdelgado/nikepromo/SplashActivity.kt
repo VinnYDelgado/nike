@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
-
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         hideSystemUI()
         super.onCreate(savedInstanceState)
-        startActivity(Intent(this@SplashActivity,IntroActivity::class.java))
+        startActivity(Intent(this@SplashActivity, IntroActivity::class.java))
         finish()
     }
 
@@ -24,5 +23,4 @@ class SplashActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
     }
-
 }

@@ -7,7 +7,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.ViewPager
 import kotlin.math.max
 
-
 class ParallaxPageTransformer : ViewPager.PageTransformer {
     override fun transformPage(page: View, position: Float) {
         val pageWidth = page.width
@@ -36,6 +35,7 @@ class ParallaxPageTransformer : ViewPager.PageTransformer {
             page.alpha = 1.0f
         }
     }
+
     companion object {
         private const val MIN_SCALE = 0.85f
         private const val MIN_ALPHA = 0.5f
