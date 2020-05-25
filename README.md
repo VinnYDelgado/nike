@@ -2,4 +2,4 @@
 
 Rewriting Plaid, in Kotlin.
 
-Status do projeto - [![TravisCI](https://travis-ci.org/vinidelgado/nike.svg?branch=master)]
+Status do projeto - ![TravisCI](https://travis-ci.org/vinidelgado/nike.svg?branch=master)
