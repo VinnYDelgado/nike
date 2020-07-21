@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.ViewPager
+import kotlin.math.abs
 import kotlin.math.max
 
 class ParallaxPageTransformer : ViewPager.PageTransformer {
@@ -16,7 +17,7 @@ class ParallaxPageTransformer : ViewPager.PageTransformer {
             page.findViewById<ConstraintLayout>(R.id.header_details).translationX = -position * page.width / 2
             page.findViewById<AppCompatButton>(R.id.appCompatButton).translationX = -position * page.width / 2
 
-            val scaleFactor = max(MIN_SCALE, 1 - Math.abs(position))
+            val scaleFactor = max(MIN_SCALE, 1 - abs(position))
             val vertMargin = pageHeight * (1 - scaleFactor) / 2
             val horzMargin = pageWidth * (1 - scaleFactor) / 2
             if (position < 0) {

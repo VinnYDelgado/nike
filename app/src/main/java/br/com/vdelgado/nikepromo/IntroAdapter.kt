@@ -16,6 +16,10 @@ class IntroAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESU
     }
 
     override fun getCount(): Int {
-        return 3
+        return shoesCount
+    }
+
+    companion object{
+        const val shoesCount = 3
     }
 }

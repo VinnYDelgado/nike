@@ -27,22 +27,17 @@ class IntroFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments?.containsKey(BACKGROUND_COLOR) == false) {
-            throw RuntimeException("Fragment must contain a \"$BACKGROUND_COLOR\" argument!")
+            throw RuntimeException("Fragment must contain a $BACKGROUND_COLOR argument!")
         }
         mBackgroundColor = arguments?.get(BACKGROUND_COLOR) as Int
         if (arguments?.containsKey(PAGE) == false) {
-            throw RuntimeException("Fragment must contain a \"$BACKGROUND_COLOR\" argument!")
+            throw RuntimeException("Fragment must contain a $BACKGROUND_COLOR argument!")
         }
         mPage = arguments?.get(PAGE) as Int
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var layoutResID: Int = when (mPage) {
-            0 -> R.layout.promo_page
-            1 -> R.layout.promo_page
-            2 -> R.layout.promo_page
-            else -> R.layout.promo_page
-        }
+        val layoutResID: Int = R.layout.promo_page
         val view = activity!!.layoutInflater.inflate(layoutResID, container, false)
         view.tag = mPage
         return view
@@ -78,35 +73,45 @@ class IntroFragment : Fragment() {
     }
 
     private fun configImageShoes() {
-        imageViewShoes.setImageResource(when (mPage) {
-            0 -> R.drawable.nike_19
-            1 -> R.drawable.nike_air_solstice
-            else -> R.drawable.nike_safari
-        })
+        imageViewShoes.setImageResource(
+            when (mPage) {
+                0 -> R.drawable.nike_19
+                1 -> R.drawable.nike_air_solstice
+                else -> R.drawable.nike_safari
+            }
+        )
     }
 
     private fun configPrice() {
-        textViewPrice.text = String.format(resources.getString(R.string.price_default_product), getString(when (mPage) {
-            0 -> R.string.price_page_one
-            1 -> R.string.price_page_two
-            else -> R.string.price_page_three
-        }))
+        textViewPrice.text = String.format(
+            resources.getString(R.string.price_default_product), getString(
+                when (mPage) {
+                    0 -> R.string.price_page_one
+                    1 -> R.string.price_page_two
+                    else -> R.string.price_page_three
+                }
+            )
+        )
     }
 
     private fun configHeaderDescription() {
-        headerDescription.text = getString(when (mPage) {
-            0 -> R.string.description_page_one
-            1 -> R.string.description_page_two
-            else -> R.string.description_page_three
-        })
+        headerDescription.text = getString(
+            when (mPage) {
+                0 -> R.string.description_page_one
+                1 -> R.string.description_page_two
+                else -> R.string.description_page_three
+            }
+        )
     }
 
     private fun configHeaderTitle() {
-        headerTitle.text = getString(when (mPage) {
-            0 -> R.string.title_page_one
-            1 -> R.string.title_page_two
-            else -> R.string.title_page_three
-        })
+        headerTitle.text = getString(
+            when (mPage) {
+                0 -> R.string.title_page_one
+                1 -> R.string.title_page_two
+                else -> R.string.title_page_three
+            }
+        )
     }
 
     private fun configFonts() {
