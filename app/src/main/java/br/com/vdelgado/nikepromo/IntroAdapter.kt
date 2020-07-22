@@ -19,7 +19,7 @@ class IntroAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESU
         return shoesCount
     }
 
-    companion object{
+    companion object {
         const val shoesCount = 3
     }
 }
